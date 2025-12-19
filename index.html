@@ -1,0 +1,51 @@
+
+<!DOCTYPE html>
+<html lang="bg">
+<head>
+<meta charset="UTF-8">
+<title>Честит рожден ден!</title>
+<style>
+body {
+  margin: 0;
+  height: 100vh;
+  background: linear-gradient(135deg, #ff6a88, #ff99ac);
+  color: white;
+  font-family: Arial, sans-serif;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+h1 { font-size: 48px; }
+p { font-size: 24px; }
+button {
+  margin-top: 30px;
+  padding: 15px 35px;
+  font-size: 20px;
+  border-radius: 30px;
+  border: none;
+  cursor: pointer;
+}
+</style>
+</head>
+<body>
+
+<h1>🎉 ЧЕСТИТ РОЖДЕН ДЕН, КАЛА! 🎉</h1>
+<p>Да си жива и здрава и много щастлив! ❤️</p>
+
+<button onclick="playMusic()">▶ Пусни песента</button>
+
+<iframe id="music" width="0" height="0"
+src="https://www.youtube.com/embed/DIqRV8H4APs?enablejsapi=1"
+allow="autoplay">
+</iframe>
+
+<script>
+function playMusic() {
+  document.getElementById("music").src =
+  "https://www.youtube.com/embed/DIqRV8H4APs?autoplay=1&loop=1&playlist=DIqRV8H4APs";
+}
+</script>
+
+</body>
+</html>
