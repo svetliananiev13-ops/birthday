@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="bg">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Честит Рожден Ден!</title>
+<style>
+    body {
+        margin: 0;
+        padding: 0;
+        font-family: Arial, sans-serif;
+        text-align: center;
+        color: white;
+        background: linear-gradient(-45deg, #ff0000, #ff7300, #fffb00, #48ff00, #00ffee, #2b65ff, #8000ff, #ff00c8);
+        background-size: 400% 400%;
+        animation: gradient 10s ease infinite;
+        overflow: hidden;
+    }
+
+    @keyframes gradient {
+        0% {background-position: 0% 50%;}
+        50% {background-position: 100% 50%;}
+        100% {background-position: 0% 50%;}
+    }
+
+    h1 {
+        font-size: 60px;
+        margin-top: 15%;
+        text-shadow: 0 0 20px black;
+        animation: pulse 1.5s infinite;
+    }
+
+    p {
+        font-size: 28px;
+        width: 80%;
+        margin: auto;
+        text-shadow: 0 0 10px black;
+    }
+
+    @keyframes pulse {
+        0% { transform: scale(1); }
+        50% { transform: scale(1.1); }
+        100% { transform: scale(1); }
+    }
+
+    .confetti {
+        position: fixed;
+        width: 10px;
+        height: 10px;
+        background: white;
+        top: -10px;
+        animation: fall linear infinite;
+    }
+
+    @keyframes fall {
+        to {
+            transform: translateY(110vh) rotate(360deg);
+        }
+    }
+
+    button {
+        margin-top: 30px;
+        padding: 15px 30px;
+        font-size: 20px;
+        border: none;
+        border-radius: 10px;
+        cursor: pointer;
+        background: black;
+        color: white;
+        transition: 0.3s;
+    }
+
+    button:hover {
+        background: white;
+        color: black;
+    }
+</style>
+</head>
+<body>
+
+<h1>🎉 ЧЕСТИТ РОЖДЕН ДЕН! 🎉</h1>
+<p>
+Пожелавам ти да си жив и здрав,  
+много късмет, пари, коли и жени! 🚗💰🔥  
+Нека всичко, за което мечтаеш, се сбъдне!
+</p>
+
+<button onclick="playMusic()">ПУСНИ ЯКОТО 🎵</button>
+
+<!-- YouTube Embed -->
+<iframe id="music" width="0" height="0"
+src="https://www.youtube.com/embed/updfL4-cxdg?enablejsapi=1&autoplay=1"
+frameborder="0" allow="autoplay"></iframe>
+
+<script>
+function playMusic() {
+    let iframe = document.getElementById("music");
+    iframe.src += "&autoplay=1";
+}
+
+// Confetti generator
+for (let i = 0; i < 100; i++) {
+    let confetti = document.createElement("div");
+    confetti.classList.add("confetti");
+    confetti.style.left = Math.random() * 100 + "vw";
+    confetti.style.animationDuration = (Math.random() * 3 + 2) + "s";
+    confetti.style.backgroundColor = 
+        "hsl(" + Math.random() * 360 + ", 100%, 50%)";
+    document.body.appendChild(confetti);
+}
+</script>
+
+</body>
+</html>
